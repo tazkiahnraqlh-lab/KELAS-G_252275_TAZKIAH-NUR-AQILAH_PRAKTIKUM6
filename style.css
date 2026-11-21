@@ -1,0 +1,324 @@
+
+/* 1. Box model seragam untuk semua elemen */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    color: #0f172a;
+    background-color: #f8fafc;
+}
+
+/* 2. Navbar memakai Flexbox */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.menu a {
+    margin-left: 20px;
+    color: #64748b;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    color: #4f46e5;
+    border-bottom-color: #4f46e5;
+}
+
+/* 3. Content dan sidebar berdampingan */
+.halaman {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 24px;
+}
+
+.konten {
+    flex: 1;
+    min-width: 0;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.sidebar {
+    flex: 0 0 220px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.sidebar h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.sidebar li a:hover {
+    background-color: #eef2ff;
+    color: #4f46e5;
+}
+
+/* 4. Tabel data */
+.tabel-data {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    table-layout: fixed;
+}
+
+.tabel-data caption {
+    padding-bottom: 10px;
+    text-align: left;
+    font-style: italic;
+    color: #64748b;
+}
+
+.tabel-data th,
+.tabel-data td {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.tabel-data thead th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.tabel-data tbody tr:hover {
+    background-color: #eef2ff;
+}
+
+.tabel-data .kolom-no       {width: 6%;}
+.tabel-data .kolom-judul    {width: 34%;}
+.tabel-data .kolom-penulis  {width: 25%;}
+.tabel-data .kolom-tahun    {width: 10%;}
+.tabel-data .kolom-kategori {width: 25%;}
+
+/* 5. Footer */
+.kaki {
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* 6. Satu breakpoint: lebar 768px ke bawah */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 16px;
+    }
+
+    .menu a {
+        margin-left: 0;
+        margin-right: 16px;
+    }
+
+    .halaman {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 12px auto;
+        padding: 0 12px;
+    }
+
+    .konten {
+        flex: none;
+        padding: 12px;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+    }
+
+    .tabel-data {
+        font-size: 13px;
+    }
+
+    .tabel-data th,
+    .tabel-data td {
+        padding: 6px 8px;
+    }
+
+    .tabel-data .kolom-penulis {
+        display: none;
+    }
+}
+
+/* 7. Pencarian, form, dan tombol */
+.konten h2 {
+    margin: 28px 0 12px;
+    font-size: 18px;
+}
+
+.sidebar input[type="text"],
+.form-buku input,
+.form-buku select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.sidebar ul + h2 {
+    margin-top: 24px;
+}
+
+.ringkas {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4338ca;
+}
+
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.sidebar button {
+    width: 100%;
+    margin-top: 14px;
+}
+
+/* 7. Lanjutan: form */
+.form-buku {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.form-buku p {
+    flex: 1 1 160px;
+    margin: 0;
+}
+
+.form-buku label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-buku button {
+    align-self: flex-end;
+}
+
+/* 8. Kelas yang dipasang lewat JavaScript */
+.tabel-data tbody tr.dipilih {
+    background-color: #e0e7ff;
+}
+
+.tabel-data tbody tr.menipis td:last-child {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* 9. Tanda kolom salah dan kotak pesan */
+.form-buku input.salah,
+.form-buku select.salah {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.pesan-error {
+    margin: 16px 0 0;
+    padding: 12px 12px 12px 32px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    color: #991b1b;
+    font-size: 14px;
+}
+
+.pesan-sukses {
+    margin: 16px 0 0;
+    padding: 12px;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    color: #065f46;
+    font-size: 14px;
+}
+
+.pesan-error:empty,
+.pesan-sukses:empty {
+    display: none;
+}
+
+/* 10. Judul halaman dan kotak pesan */
+
+.konten h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.konten .pesan-error,
+.konten .pesan-sukses {
+    margin: 14px 0 18px;
+}
+
+/* 11. Jarak blok di dalam sidebar */
+
+.sidebar form + h2,
+.sidebar ul + h2 {
+    margin-top: 26px;
+}
+
+.sidebar .form-buku button {
+    width: 100%;
+}

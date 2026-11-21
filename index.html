@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perpus Mini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a class="brand" href="#">Perpus Mini</a>
+
+        <nav class="menu">
+            <a href="#">Beranda</a>
+            <a href="#">Katalog</a>
+            <a href="#">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="halaman">
+        <main class="konten">
+
+            <table class="tabel-data">
+                <caption>Daftar Buku Perpustakaan</caption>
+                <thead>
+                    <tr>
+                        <th class="kolom-judul">Judul</th>
+                        <th class="kolom-penulis">Penulis</th>
+                        <th class="kolom-kategori">Kategori</th>
+                        <th class="kolom-tahun">Tahun</th>
+                        <th class="kolom-stok">Stok</th>
+                    </tr>
+                </thead>
+
+                <tbody id="isiTabel">
+                    <tr>
+                        <td class="kolom-judul">Clean Code</td>
+                        <td class="kolom-penulis">Robert C. Martin</td>
+                        <td class="kolom-kategori">Pemrograman</td>
+                        <td class="kolom-tahun">2008</td>
+                        <td class="kolom-stok">5</td>
+                    </tr>
+                    <tr>
+                        <td class="kolom-judul">Laskar Pelangi</td>
+                        <td class="kolom-penulis">Andrea Hirata</td>
+                        <td class="kolom-kategori">Novel</td>
+                        <td class="kolom-tahun">2005</td>
+                        <td class="kolom-stok">4</td>
+                    </tr>
+                    <tr>
+                        <td class="kolom-judul">Bumi Manusia</td>
+                        <td class="kolom-penulis">Pramoedya Ananta Toer</td>
+                        <td class="kolom-kategori">Novel</td>
+                        <td class="kolom-tahun">1980</td>
+                        <td class="kolom-stok">2</td>
+                    </tr>
+                    <tr>
+                        <td class="kolom-judul">Sapiens</td>
+                        <td class="kolom-penulis">Yuval Noah Harari</td>
+                        <td class="kolom-kategori">Sejarah</td>
+                        <td class="kolom-tahun">2011</td>
+                        <td class="kolom-stok">3</td>
+                    </tr>
+                    <tr>
+                        <td class="kolom-judul">Atomic Habits</td>
+                        <td class="kolom-penulis">James Clear</td>
+                        <td class="kolom-kategori">Pengembangan Diri</td>
+                        <td class="kolom-tahun">2018</td>
+                        <td class="kolom-stok">6</td>
+                    </tr>
+                    <tr>
+                        <td class="kolom-judul">The Let Them Theory</td>
+                        <td class="kolom-penulis">Mel Robbins & Sawyer Robbins</td>
+                        <td class="kolom-kategori">Pengembangan Diri</td>
+                        <td class="kolom-tahun">2024</td>
+                        <td class="kolom-stok">5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Tambah buku</h2>
+
+            <form id="formBuku" class="form-buku" novalidate>
+                <p>
+                    <label for="judul">Judul</label>
+                    <input type="text" id="judul">
+                </p>
+
+                <p>
+                    <label for="penulis">Penulis</label>
+                    <input type="text" id="penulis">
+                </p>
+
+                <p>
+                    <label for="kategori">Kategori</label>
+                    <select id="kategori">
+                        <option>Pemrograman</option>
+                        <option>Novel</option>
+                        <option>Sejarah</option>
+                        <option>Pengembangan Diri</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="tahun">Tahun</label>
+                    <input type="text" id="tahun">
+                </p>
+
+                <p>
+                    <label for="stok">Stok</label>
+                    <input type="text" id="stok">
+                </p>
+
+                <button type="submit">Tambah</button>
+            </form>
+
+            <ul id="pesanError" class="pesan-error"></ul>
+            <p id="pesanSukses" class="pesan-sukses"></p>
+
+        </main>
+
+        <aside class="sidebar">
+            <h2>Kategori</h2>
+
+            <ul>
+                <li><a href="#">Pemrograman</a></li>
+                <li><a href="#">Novel</a></li>
+                <li><a href="#">Sejarah</a></li>
+                <li><a href="#">Pengembangan Diri</a></li>
+                <li><a href="#">Desain</a></li>
+            </ul>
+
+            <h2>Cari buku</h2>
+
+            <input type="text" id="cari" placeholder="Ketik judul atau penulis...">
+
+            <p id="totalBuku" class="ringkas">Total judul: 6</p>
+            <p id="terpilih" class="ringkas">Dipilih: -</p>
+
+            <button type="button" id="tombolMenipis">
+                Sorot stok menipis
+            </button>
+
+            <button type="button" id="hapusTerpilih">
+                Hapus baris terpilih
+            </button>
+        </aside>
+
+    </div>
+
+    <footer class="kaki">
+        <p>
+            Perpus Mini &mdash; Praktikum 04, Pemrograman Web Native
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
